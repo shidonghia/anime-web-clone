@@ -1,10 +1,21 @@
 .body {
     background-color: #0f1416;
-    padding: 20px 8px;
+    padding: 20px;
+    color: #fff;
 }
 
-.new-eposide-anime-container {
+.anime-recommand-container {
     width: 100%;
     margin-bottom: 20px;
+}
+
+.anime-recommand-container .container {
+    padding: 0;
+}
+
+.anime-recommand-title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 2.4rem;
 }
 

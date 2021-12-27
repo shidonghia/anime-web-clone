@@ -85,7 +85,7 @@ function Slide() {
         }, 5000)
 
         return () => clearInterval(interval)
-    },[activeSlideIndex])
+    })
 
     return (
         <>

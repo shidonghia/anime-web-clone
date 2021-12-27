@@ -1,0 +1,165 @@
+.anime-rank-type {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 4px;
+    color: inherit;
+}
+
+.anime-rank-type-button {
+    flex: 0 0 20%;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    text-align: left;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px;
+    margin-right: 16px;
+}
+
+.anime-rank-type-button--active {
+    color: #f44336;
+    border-bottom: 2px solid #b5e745;
+}
+
+.anime-rank-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.anime-rank-item {
+    width: 100%;
+    height: 96px;
+    margin-top: 16px;
+}
+
+.anime-rank-item-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+.anime-rank-item-wrapper:hover .anime-rank-play-icon {
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.anime-rank-item-wrapper:hover .anime-rank-item-title{
+    color: #7d7d7d;
+}
+
+.anime-rank-item-wrapper:hover .anime-rank-item-img{
+    opacity: 0.6;
+}
+
+/* .anime-rank-item-wrapper:not( :hover) .anime-rank-play-icon {
+    opacity: 0;
+} */
+
+.anime-rank-item-no {
+    position: absolute;
+    background-color: #b5e745;
+    color: #333;
+    padding: 6px;
+    padding-bottom: 2px;
+    left: -4px;
+    top: -4px;
+    border-top-left-radius: 2px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.anime-rank-item-no::before {
+    content: '';
+    position: absolute;
+    border-bottom: 5px solid #b5e745;
+    border-right: 5px solid transparent;
+    right: -5px;
+    top: 0;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.anime-rank-item-no i::before {
+    content: '';
+    position: absolute;
+    border-right: 11px solid transparent;
+    border-top: 5px solid #b5e745;
+    left: 0;
+    bottom: -5px;
+    z-index: 1;
+}
+
+.anime-rank-item-no i::after {
+    content: '';
+    position: absolute;
+    border-left: 11px solid transparent;
+    border-top: 5px solid #b5e745;
+    right: 0;
+    bottom: -5px;
+    z-index: 1;
+}
+
+
+.anime-rank-item-img {
+    width: 20%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.anime-rank-item-title {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.anime-rank-item-detail {
+    font-size: 1.2rem;
+    margin-left: 8px;
+}
+
+.anime-rank-item-rating {
+    margin-right: 8px;
+    color: #b5e745;
+    height: 18px;
+    line-height: 18px;
+}
+
+.anime-rank-item-eposide {
+    margin-right: 8px;
+    color: #78909c;
+}
+
+.anime-rank-item-year {
+    margin-right: 8px;
+    color: #78909c;
+}
+
+.anime-rank-item-quality {
+    background-color: #e62117;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1px 8px;
+}
+
+.anime-rank-item-view {
+    margin-top: 4px;
+    color: #7d7d7d;
+}
+
+.anime-rank-play-icon {
+    position: absolute;
+    font-size: 3rem;
+    top: calc(50% - 15px);
+    left: calc(10% - 15px);
+    transform-origin: center;       
+    transform: scale(0, 0);
+    opacity: 0;
+    transition: transform ease 0.3s, opacity linear 0.3s;
+}

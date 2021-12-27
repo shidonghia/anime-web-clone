@@ -8,7 +8,7 @@ function AnimeCard({ anime }) {
             <div className="anime-wrapper">
                 <a href="/" className="anime-link">
                     <img src={anime.url} alt={anime.title} className="anime-img" />
-                    <span className="anime-eposide">Tập {anime.eposide.at(-1)}</span>
+                    <span className="anime-eposide">{anime.lastEposide === anime.maxEposide ? "Hoàn tất" : `Tập ${anime.lastEposide}`}</span>
                     <div className="anime-rating">
                         <i className="fa-solid fa-star"></i>
                         <span>{anime.rating}</span>
@@ -23,6 +23,10 @@ function AnimeCard({ anime }) {
                 <span className="anime-play-button">
                     <i className="fa-solid fa-circle-play"></i>
                 </span>
+                <div className="anime-extra-detail">
+                    <h3 className="anime-extra-detail-title">{anime.title}</h3>
+                    <span className="anime-extra-detail-summary">{anime.summary}</span>
+                </div>
             </div>
         </>
     )

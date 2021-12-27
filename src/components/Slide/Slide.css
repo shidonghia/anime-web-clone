@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: 360px;
-    /* display: flex; */
+    /* display: flex;  */
     /* overflow: hidden; */
 }
 
@@ -21,8 +21,8 @@
     width: 100%;
     height: 100%;
     position: relative;
-    /* flex: 0 0 100%; */
-    /* transform: translateX(0) */
+    flex: 0 0 100%;
+    /* transform: translateX(0); */
     display: none;
 }
 

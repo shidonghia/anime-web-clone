@@ -1,0 +1,93 @@
+.anime-body-container {
+    width: 100%;
+}
+
+.new-anime-container {
+    width: 100%;
+}
+
+.new-anime-filter {
+    display: flex;
+    justify-content: flex-start;
+    height: 40px;
+    align-items: center;
+    padding-right: 24px;
+    margin: 28px 0 16px 0;
+}
+
+.new-anime-title {
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    position: relative;
+    top: -3px;
+}   
+
+.new-anime-filter-type {
+    text-align: left;
+    display: inline-block;
+    min-width: 72px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    color: gray;
+    background-color: transparent;
+    font-size: 1.6rem;
+    margin-left: 24px;  
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.new-anime-filter-type:hover {
+    color: #fff;
+}
+
+.new-anime-filter-type--active {
+    color: #f44336;
+}
+
+.pagination-wrapper {
+    width: 100%;
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+    height: 40px;
+}
+
+.pagination-wrapper button {
+    color: #789098;
+    background-color: #313637;
+    height: 100%;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.pagination-first-page, .pagination-last-page {
+    min-width: 100px;
+}
+
+.pagination-last-page {
+    margin-left: 16px;
+}
+
+.pagination-button, .pagination-prev, .pagination-after {
+    width: 40px;
+    margin-left: 16px;
+}
+
+.pagination-wrapper .pagination-button--active {
+    background-color: #b71c1c;
+    color: #fff;
+    pointer-events: none;
+}
+
+.pagination-wrapper .pagination-button--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+
