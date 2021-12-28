@@ -2,6 +2,7 @@
     background-color: #0f1416;
     padding: 20px;
     color: #fff;
+    /* overflow: hidden; */
 }
 
 .anime-recommand-container {
@@ -17,5 +18,36 @@
     text-transform: uppercase;
     margin-bottom: 20px;
     font-size: 2.4rem;
+}
+
+.scrollToTop {
+    background-color: #fff;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #333;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    transition: transform 0.1s linear;
+}
+
+.scrollToTop:hover {
+    transform: scale(1.4, 1.4);
+    cursor: pointer;
+}
+
+.scrollToTop i {
+    
+}
+
+.scrollToTop span{
+    width: 40px;
+    text-align: center;
 }
 

@@ -12,13 +12,13 @@ function Header() {
             <div className="header" >
                 <div className="container">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-1">
                             <a href="/" className="header_logo" >
                                 <img src="http://cdn.animevietsub.tv/data/logo/logoz.png" alt="Logo website" />
                             </a>
                         </div>
 
-                        <div className="col-6">
+                        <div className="col-7">
                             <ul className="header_nav-link">
                                 <li className="header_nav-item header_nav-item--active"><a href="/">Trang chủ</a></li>
                                 <li className="header_nav-item">
@@ -76,7 +76,7 @@ function Header() {
 
                         <div className="col-3">
                             <div className="header_search">
-                                <input type="text" className="header_search-box" placeholder="Tìm: tên tiếng anh, nhật, việt" />
+                                <input type="text" className="header_search-box" placeholder="Tìm: tiếng anh, nhật, việt" />
                                 <i className="fa-solid fa-magnifying-glass header_search-icon" ></i>
                             </div>
 

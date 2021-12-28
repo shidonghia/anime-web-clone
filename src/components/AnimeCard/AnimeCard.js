@@ -4,7 +4,6 @@ import './AnimeCard.css'
 function AnimeCard({ anime }) {
     return (
         <>
-
             <div className="anime-wrapper">
                 <a href="/" className="anime-link">
                     <img src={anime.url} alt={anime.title} className="anime-img" />

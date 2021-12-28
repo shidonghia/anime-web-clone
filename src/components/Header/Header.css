@@ -15,11 +15,12 @@
 }
 
 .header_logo img {
-    height: 35px;
+    height: 36px;
     line-height: 60px;
 }
 
 .header_nav-link {
+    padding-left: 24px;
     height: 100%;
     display: flex;
     list-style-type: none;
@@ -35,9 +36,15 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     position: relative;
+    border-bottom: 3px solid;
 }
+
+.header_nav-item:hover>a {
+    color: #ccc;
+}
+
 
 .header_nav-item:hover .submenu {
     display: flex;
@@ -162,4 +169,8 @@
     padding: 12px 4px;
     font-size: 1.3rem;
     font-weight: 500;
+}
+
+.header_login-button:hover {
+    background-color: #263238;
 }

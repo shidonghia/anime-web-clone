@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 
 import AnimeCard from '../AnimeCard/AnimeCard';
 import './NewAnime.css'
@@ -723,6 +723,19 @@ function NewAnime() {
         return paginationArray
     })
 
+    // const handleClickPage = (e) => {
+    //     if(e.target.value === "prev-page") {
+    //         // setCurrentPage(prevPage => prevPage - 1)
+    //         console.log("prev-page")
+    //     } else if(e.target.value === "after-page") {
+    //         // setCurrentPage(prevPage => prevPage + 1)
+    //         console.log("after-page")
+    //     } else {
+    //         // setCurrentPage(parseInt(e.target.value))
+    //         console.log(e.target.value, typeof e.target.value)
+    //     }
+    // }
+
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -741,8 +754,16 @@ function NewAnime() {
         setCurrentPage(1)
     }, [animeListFilter])
 
-    useEffect(() => {
-        window.scrollTo(0, 800)
+    const firstRender = useRef(true)
+
+    useLayoutEffect(() => {
+        if (firstRender.current) {
+            
+            console.log("first render")
+            firstRender.current = false
+        } else {
+            window.scrollTo(0, 800)
+        }
     }, [currentPage])
 
     return (
@@ -770,8 +791,8 @@ function NewAnime() {
                 </div>
 
                 <div className="pagination-wrapper">
-                    <button className={`pagination-first-page ${currentPage === 1 ? 'pagination-button--disabled' : ''}`} onClick={() => setCurrentPage(1)}>Trang đầu</button>
-                    <button className={`pagination-prev ${currentPage === 1 ? 'pagination-button--disabled' : ''}`} onClick={() => setCurrentPage(prevPage => prevPage - 1)}><i className="fa-solid fa-angle-left"></i></button>
+                    <button className={`pagination-first-page ${currentPage === 1 ? 'pagination-button--disabled' : ''}`} value={1} onClick={(e) => setCurrentPage(1)}>Trang đầu</button>
+                    <button className={`pagination-prev ${currentPage === 1 ? 'pagination-button--disabled' : ''}`} value="prev-page" onClick={(e) => setCurrentPage(prevPage => prevPage - 1)}><i className="fa-solid fa-angle-left"></i></button>
                     {
 
                         (paginationArray.length <= pageInRowLimit) ? (
@@ -794,7 +815,7 @@ function NewAnime() {
                             })
                         ))
                     }
-                    <button className={`pagination-after ${currentPage === paginationArray.at(-1) ? 'pagination-button--disabled' : ''}`} onClick={() => setCurrentPage(prevPage => prevPage + 1)}><i className="fa-solid fa-angle-right"></i></button>
+                    <button className={`pagination-after ${currentPage === paginationArray.at(-1) ? 'pagination-button--disabled' : ''}`} value="after-page" onClick={(e) => setCurrentPage(prevPage => prevPage + 1)}><i className="fa-solid fa-angle-right"></i></button>
                     <button className={`pagination-last-page ${currentPage === paginationArray.at(-1) ? 'pagination-button--disabled' : ''}`} onClick={() => setCurrentPage(paginationArray.length)}>Trang cuối</button>
                 </div>
             </div>

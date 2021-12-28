@@ -16,10 +16,6 @@ body {
     background-color: #263238;
 }
 
-.row {
-    height: 100%;
-}
-
 a, a:hover, a:focus, a:active{
     text-decoration: none;
     color: inherit;
@@ -38,5 +34,11 @@ button, a {
     cursor: pointer;
     outline: none;
     border: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
 }
 
