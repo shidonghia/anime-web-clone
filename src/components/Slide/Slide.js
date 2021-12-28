@@ -90,56 +90,58 @@ function Slide() {
     return (
         <>
             <div className="slide-wrapper">
-                {slides.map((slide, index) => {
-                    return (
-                        <div className={`slide ${index === activeSlideIndex ? 'slide--active' : ''}`} key={index}>
-                            <a href='/'><img src={slide.url} alt={slide.title} className="slide-anime-img" /></a>
-                            <div className="slide-anime-detail">
-                                <a href='/'>
-                                    <h3 className="slide-anime-title">
-                                        {slide.title}
-                                    </h3>
-                                </a>
-                                <span className="slide-anime-star">
-                                    <i className="fa-solid fa-star me-2"></i>
-                                    {slide.star}
-                                </span>
-                                <span className="slide-anime-eposide">
-                                    <i className="fa-solid fa-clock me-2"></i>
-                                    {slide.eposideCurrent}/{slide.eposideMax || '??'}
-                                </span>
-                                <span className="slide-anime-year ">
-                                    <i className="fa-solid fa-calendar me-2"></i>
-                                    {slide.year}
-                                </span>
-                                <span className="slide-anime-quality">
-                                    HD
-                                </span>
-                                <div className="slide-anime-summary">
-                                    {slide.summary}
-                                </div>
-                                <p className="slide-anime-studio">
-                                    <i className="fa-solid fa-video me-2"></i>
-                                    Studio: {slide.studio}
-                                </p>
-                                <p className="slide-anime-category">
-                                    <i className="fa-solid fa-list me-2"></i>
-                                    Thể loại: {slide.category.map((cate, index) => {
-                                        return (
-                                            <a href='/' key={`${cate}${index}${Math.floor(Math.random() * 1000 + 1)} `} className='category-link'>{cate}</a>
-                                        )
-                                    })}
-                                </p>
-                                <div href="/" className="slide-anime-watch-button">
+                <div className="slide-inner" style={{transform: `translateX(-${activeSlideIndex * 100}%)`}}>
+                    {slides.map((slide, index) => {
+                        return (
+                            <div className={`slide ${index === activeSlideIndex ? 'slide--active' : ''}`} key={index}>
+                                <a href='/'><img src={slide.url} alt={slide.title} className="slide-anime-img" /></a>
+                                <div className="slide-anime-detail">
                                     <a href='/'>
-                                        <i className="fa-solid fa-caret-right me-2"></i>
-                                        Xem phim
+                                        <h3 className="slide-anime-title">
+                                            {slide.title}
+                                        </h3>
                                     </a>
+                                    <span className="slide-anime-star">
+                                        <i className="fa-solid fa-star me-2"></i>
+                                        {slide.star}
+                                    </span>
+                                    <span className="slide-anime-eposide">
+                                        <i className="fa-solid fa-clock me-2"></i>
+                                        {slide.eposideCurrent}/{slide.eposideMax || '??'}
+                                    </span>
+                                    <span className="slide-anime-year ">
+                                        <i className="fa-solid fa-calendar me-2"></i>
+                                        {slide.year}
+                                    </span>
+                                    <span className="slide-anime-quality">
+                                        HD
+                                    </span>
+                                    <div className="slide-anime-summary">
+                                        {slide.summary}
+                                    </div>
+                                    <p className="slide-anime-studio">
+                                        <i className="fa-solid fa-video me-2"></i>
+                                        Studio: {slide.studio}
+                                    </p>
+                                    <p className="slide-anime-category">
+                                        <i className="fa-solid fa-list me-2"></i>
+                                        Thể loại: {slide.category.map((cate, index) => {
+                                            return (
+                                                <a href='/' key={`${cate}${index}${Math.floor(Math.random() * 1000 + 1)} `} className='category-link'>{cate}</a>
+                                            )
+                                        })}
+                                    </p>
+                                    <div href="/" className="slide-anime-watch-button">
+                                        <a href='/'>
+                                            <i className="fa-solid fa-caret-right me-2"></i>
+                                            Xem phim
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
                 <div className="slide-control">
                     {
                         slides.map((slide, index) => {
