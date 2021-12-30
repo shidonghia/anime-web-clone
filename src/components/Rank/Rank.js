@@ -184,7 +184,7 @@ function Rank() {
                                         <span className="anime-rank-item-quality">
                                             HD
                                         </span>
-                                        <span className="anime-rank-item-view">Lượt xem: {anime.view}</span>
+                                        <p className="anime-rank-item-view">Lượt xem: {anime.view}</p>
                                     </div>
                                     <i className="fa-solid fa-circle-play anime-rank-play-icon"></i>
                                 </div>

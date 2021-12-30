@@ -723,19 +723,6 @@ function NewAnime() {
         return paginationArray
     })
 
-    // const handleClickPage = (e) => {
-    //     if(e.target.value === "prev-page") {
-    //         // setCurrentPage(prevPage => prevPage - 1)
-    //         console.log("prev-page")
-    //     } else if(e.target.value === "after-page") {
-    //         // setCurrentPage(prevPage => prevPage + 1)
-    //         console.log("after-page")
-    //     } else {
-    //         // setCurrentPage(parseInt(e.target.value))
-    //         console.log(e.target.value, typeof e.target.value)
-    //     }
-    // }
-
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -755,6 +742,7 @@ function NewAnime() {
     }, [animeListFilter])
 
     const firstRender = useRef(true)
+    const animeContainerTag = useRef()
 
     useLayoutEffect(() => {
         if (firstRender.current) {
@@ -762,16 +750,18 @@ function NewAnime() {
             console.log("first render")
             firstRender.current = false
         } else {
-            window.scrollTo(0, 800)
+            const locationY = document.body.getBoundingClientRect().top - animeContainerTag.current.getBoundingClientRect().top;
+            window.scrollTo(0, Math.abs(locationY))
+            console.log(document.body.getBoundingClientRect().top - animeContainerTag.current.getBoundingClientRect().top)
         }
     }, [currentPage])
 
     return (
 
-        <div className="anime-body-container">
+        <div className="anime-body-container" ref={animeContainerTag}>
             <div className='new-anime-container'>
                 <div className="new-anime-filter">
-                    <h3 className="new-anime-title" >Mới cập nhật</h3>
+                    <span className="new-anime-title" >Mới cập nhật</span>
                     <button className={`new-anime-filter-type ${filterActive === "all" ? "new-anime-filter-type--active" : ""}`} onClick={() => setAcitveFilter('all')}>Tất cả</button>
                     <button className={`new-anime-filter-type ${filterActive === "presentSeason" ? "new-anime-filter-type--active" : ""}`} onClick={() => setAcitveFilter('presentSeason')}>Mùa này</button>
                     <button className={`new-anime-filter-type ${filterActive === "series" ? "new-anime-filter-type--active" : ""}`} onClick={() => setAcitveFilter('series')}>Series</button>
@@ -782,7 +772,7 @@ function NewAnime() {
                     {
                         animeListFilter.slice((currentPage - 1) * pageLimit, currentPage * pageLimit).map((anime, index) => {
                             return (
-                                <div className="col-3" key={`${anime.name}${index}`}>
+                                <div className="col-6 col-sm-4 col-md-3" key={`${anime.name}${index}`}>
                                     <AnimeCard anime={anime} />
                                 </div>
                             )

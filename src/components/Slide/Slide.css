@@ -21,12 +21,6 @@
     display: inline-block;
 }
 
-/* .slide--active {
-    display: block;
-    animation: slideIn 0.2s linear;
-    transform: translateX(-100%);
-} */
-
 .slide-anime-img {
     width: 100%;
     object-fit: cover;
@@ -103,14 +97,6 @@
     margin: 12px 0;
 }
 
-.slide-anime-studio {
-    
-}
-
-.slide-anime-category {
-    
-}
-
 .category-link {
     display: inline-block;
     color: #fff;
@@ -165,5 +151,24 @@
 .slide-control-item--active {
     background-color: #b71c1c;
     opacity: 1;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .slide-wrapper {
+        height: auto;
+    }
+
+    .slide-anime-detail {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .slide-control {
+        right: 20px;
+    }
 }
 

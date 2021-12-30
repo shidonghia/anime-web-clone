@@ -59,9 +59,6 @@
     opacity: 0.6;
 }
 
-/* .anime-rank-item-wrapper:not( :hover) .anime-rank-play-icon {
-    opacity: 0;
-} */
 
 .anime-rank-item-no {
     position: absolute;
@@ -162,4 +159,16 @@
     transform: scale(0, 0);
     opacity: 0;
     transition: transform ease 0.3s, opacity linear 0.3s;
+}
+
+/* Responsive */ 
+
+@media (max-width: 991px) {
+    .anime-rank-item-wrapper {
+        margin-left: 12px;
+    }
+
+    .anime-rank-item-detail {
+        margin-left: 24px;
+    }
 }

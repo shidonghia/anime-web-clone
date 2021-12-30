@@ -102,7 +102,7 @@ function Body() {
                                         {
                                             animeRecommandList.map((anime, index) => {
                                                 return (
-                                                    <div className="col-2" key={index}>
+                                                    <div className="col-6 col-sm-4 col-lg-2" key={index}>
                                                         <AnimeCard anime={anime} />
                                                     </div>
                                                 )
@@ -113,11 +113,11 @@ function Body() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-9">
+                            <div className="col-12 col-lg-9">
                                 <Slide />
                                 <NewAnime />
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3">
                                 <Sidebar />
                             </div>
                         </div>

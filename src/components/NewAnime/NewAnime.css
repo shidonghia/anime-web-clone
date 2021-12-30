@@ -16,12 +16,16 @@
 }
 
 .new-anime-title {
+    display: inline-block;
     text-align: left;
     margin-bottom: 0;
     text-transform: uppercase;
     font-size: 2.4rem;
     position: relative;
-    top: -3px;
+    /* top: -3px; */
+    height: 100%;
+    display: flex;
+    align-items: center;
 }   
 
 .new-anime-filter-type {
@@ -39,6 +43,7 @@
     margin-left: 24px;  
     text-transform: capitalize;
     font-weight: 600;
+    margin-top: 4px;
 }
 
 .new-anime-filter-type:hover {
@@ -46,7 +51,7 @@
 }
 
 .new-anime-filter-type--active {
-    color: #f44336;
+    color: #f44336 !important;
 }
 
 .pagination-wrapper {
@@ -89,5 +94,54 @@
     opacity: 0.5;
 }
 
+/* Responsive */ 
 
+@media (max-width: 1199px) {
+    .new-anime-title {
+        font-size: 1.8rem;
+        margin-right: 8px;
+        top: -2px;
+    }
+
+    .new-anime-filter-type {
+        font-size: 1.4rem;
+        min-width: 60px;
+        margin-left: 8px;
+    } 
+}
+
+@media (max-width: 1199px) {
+    .new-anime-title {
+        font-size: 1.8rem;
+        margin-right: 8px;
+        top: 1px;
+    }
+}
+
+@media (max-width: 767px) {
+    .new-anime-title {
+        font-size: 1.4rem; 
+    }
+    .new-anime-filter-type {
+        font-size: 1.2rem;
+        margin-left: 8px;
+    } 
+}
+
+@media (max-width: 575px) {
+    .pagination-wrapper {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .pagination-wrapper button {
+        margin-top: 8px;
+        height: 40px;
+    }
+
+    .new-anime-filter {
+        flex-wrap: wrap;
+        height: auto;
+    }
+}
 

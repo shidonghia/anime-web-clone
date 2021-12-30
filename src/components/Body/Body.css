@@ -2,7 +2,6 @@
     background-color: #0f1416;
     padding: 20px;
     color: #fff;
-    /* overflow: hidden; */
 }
 
 .anime-recommand-container {
@@ -40,10 +39,6 @@
 .scrollToTop:hover {
     transform: scale(1.4, 1.4);
     cursor: pointer;
-}
-
-.scrollToTop i {
-    
 }
 
 .scrollToTop span{

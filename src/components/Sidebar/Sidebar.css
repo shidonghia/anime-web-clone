@@ -108,3 +108,10 @@
     margin-top: 12px;
     color: #fff;
 }
+
+/* Responsive */ 
+@media (max-width: 991px) {
+    .sidebar {
+        margin-top: 16px;
+    }
+}

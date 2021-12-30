@@ -42,3 +42,10 @@ button, a {
     }
 }
 
+@media (max-width: 991px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+
