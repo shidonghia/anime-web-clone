@@ -28,7 +28,6 @@
 .anime-rank-list {
     display: flex;
     flex-direction: column;
-    width: 100%;
     margin-top: 12px;
 }
 
@@ -47,7 +46,7 @@
 
 
 .anime-rank-item-wrapper:hover .anime-rank-play-icon {
-    transform: scale(1, 1);
+    transform: translate(-50%, -50%) scale(1, 1);
     opacity: 1;
 }
 
@@ -104,11 +103,27 @@
     z-index: 1;
 }
 
+.anime-rank-img-wrapper {
+    position: relative;
+    max-width: 60px;
+    cursor: pointer;
+}
 
 .anime-rank-item-img {
-    max-width: 24%;
+    width: 100%;
     object-fit: cover;
     cursor: pointer;
+}
+
+.anime-rank-play-icon {
+    position: absolute;
+    font-size: 3rem;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;       
+    transform: translate(-50%, -50%) scale(0.4, 0.4);
+    opacity: 0;
+    transition: transform ease 0.3s, opacity linear 0.3s;
 }
 
 .anime-rank-item-title {
@@ -150,16 +165,7 @@
     color: #7d7d7d;
 }
 
-.anime-rank-play-icon {
-    position: absolute;
-    font-size: 3rem;
-    top: calc(50% - 15px);
-    left: calc(10% - 15px);
-    transform-origin: center;       
-    transform: scale(0, 0);
-    opacity: 0;
-    transition: transform ease 0.3s, opacity linear 0.3s;
-}
+
 
 /* Responsive */ 
 

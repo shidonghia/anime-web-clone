@@ -163,9 +163,12 @@ function Rank() {
                         return (
                             <li className='anime-rank-item' key={`${index}${Math.floor(Math.random() * 1000 + 1)}`}>
                                 <div className="anime-rank-item-wrapper">
-
                                     <span className="anime-rank-item-no">#{index + 1}<i></i></span>
-                                    <img src={anime.backgroundUrl} alt={anime.name} className="anime-rank-item-img" />
+                                    <span className="anime-rank-img-wrapper">
+                                        <img src={anime.backgroundUrl} alt={anime.name} className="anime-rank-item-img" />
+                                        <i className="fa-solid fa-circle-play anime-rank-play-icon"></i>
+                                    </span>
+                                    
                                     <div className="anime-rank-item-detail">
                                         <h5 className="anime-rank-item-title">{anime.name}</h5>
                                         <span className="anime-rank-item-rating">
@@ -186,7 +189,6 @@ function Rank() {
                                         </span>
                                         <p className="anime-rank-item-view">Lượt xem: {anime.view}</p>
                                     </div>
-                                    <i className="fa-solid fa-circle-play anime-rank-play-icon"></i>
                                 </div>
                             </li>
                         )
